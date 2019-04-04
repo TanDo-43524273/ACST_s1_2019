@@ -1,0 +1,27 @@
+# Question 1
+$ cd "D:\Study\Master of Actuarial Practice Macquarie University\S1 2019\ACST890 Data Analytics for Finance and Insurance\Assessments\OLQ1"
+$ ssh -i 43524273.pem ubuntu@ec2-13-210-68-228.ap-southeast-2.compute.amazonaws.com
+# 1a)
+ubuntu@ip-172-31-30-177:~$ wget "https://www.staff.hs-mittweida.de/~wuenschi/data/media/compbiolbook/chapter-10-shell-programming--triplet-stop.sh"
+ubuntu@ip-172-31-30-177:~$ mv chapter-10-shell-programming--triplet-stop.sh triple-stop.sh
+ubuntu@ip-172-31-30-177:~$ ls
+# 1b)
+ubuntu@ip-172-31-30-177:~$ nano triple-stop.sh
+ubuntu@ip-172-31-30-177:~$ chmod u+x triple-stop.sh
+ubuntu@ip-172-31-30-177:~$ ./triple-stop.sh taaabctaaaus
+ubuntu@ip-172-31-30-177:~$ ./triple-stop.sh abcabccdeefgtaa
+# Question 2
+# 2b)
+ubuntu@ip-172-31-30-177:~$ sort tutes.txt | uniq -u
+# Question 3
+ubuntu@ip-172-31-30-177:~$ nano test.in
+# 3a)
+ubuntu@ip-172-31-30-177:~$ egrep '^((\S+)\s+){2}(\S+)$' test.in -n
+# 3b)
+ubuntu@ip-172-31-30-177:~$ egrep '\-[0-9]+(\s|$)' test.in -n
+# 3c)
+ubuntu@ip-172-31-30-177:~$ egrep '\-{0,1}[0-9]+\.{0,1}[0-9]*(\s|$)' test.in -n
+# 3d)
+ubuntu@ip-172-31-30-177:~$ egrep '(^|\s)dehydrogenase(\s|$)' -v test.in | egrep '(^|\s)hydrogenase(\s|$)' -n
+# End of the script
+
