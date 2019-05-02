@@ -1,0 +1,53 @@
+# Question 1a
+$ cd "D:\Study\Master of Actuarial Practice Macquarie University\S1 2019\ACST890 Data Analytics for Finance and Insurance\Assessments\OLQ2"
+$ ssh -i 43524273.pem ubuntu@ec2-13-210-68-228.ap-southeast-2.compute.amazonaws.com
+ubuntu@ip-172-31-30-177:~$ wget "http://www.staff.hs-mittweida.de/~wuenschi/data/media/compbiolbook/chapter-11-regex--structure.pdb"# 1b)
+ubuntu@ip-172-31-30-177:~$ mv chapter-11-regex--structure.pdb structure.pdb
+ubuntu@ip-172-31-30-177:~$ ls
+ubuntu@ip-172-31-30-177:~$ cat structure.pdb
+ubuntu@ip-172-31-30-177:~$ sed 's/Beisel/Weisel/' structure.pdb
+ubuntu@ip-172-31-30-177:~$ sed '/Beisel/p
+> s/Beisel/Weisel/' structure.pdb
+
+# Question 1b
+ubuntu@ip-172-31-30-177:~$ sed '1,3d' structure.pdb
+ubuntu@ip-172-31-30-177:~$ sed '1,$p
+> 1,3d' structure.pdb
+
+# Question 1c
+ubuntu@ip-172-31-30-177:~$ sed -n '5,10p' structure.pdb
+ubuntu@ip-172-31-30-177:~$ sed -n '5,10=' structure.pdb
+
+# Question 1d
+ubuntu@ip-172-31-30-177:~$ sed '/MET/d' structure.pdb
+ubuntu@ip-172-31-30-177:~$ sed '1,$p
+> /MET/d' structure.pdb
+ubuntu@ip-172-31-30-177:~$ egrep -c 'MET' structure.pdb
+ubuntu@ip-172-31-30-177:~$ sed '/MET/d' structure.pdb > test1d.pdb
+ubuntu@ip-172-31-30-177:~$ egrep -c 'MET' test1d.pdb
+
+# Question 1e
+ubuntu@ip-172-31-30-177:~$ sed -n '/HELIX.*ILE/p' structure.pdb
+ubuntu@ip-172-31-30-177:~$ egrep -c 'HELIX.*ILE' structure.pdb
+ubuntu@ip-172-31-30-177:~$ sed -n '/HELIX.*ILE/p' structure.pdb > test1e.pdb
+ubuntu@ip-172-31-30-177:~$ egrep -c 'HELIX.*ILE' structure.pdb
+
+# Question 1f
+ubuntu@ip-172-31-30-177:~$ sed '/^H/s/$/***/' structure.pdb
+ubuntu@ip-172-31-30-177:~$ sed '/^H/p
+> /^H/s/$/***/' structure.pdb
+
+# Question 1g
+ubuntu@ip-172-31-30-177:~$ sed '/SEQRES/s/^.*$/SEQ/' structure.pdb
+ubuntu@ip-172-31-30-177:~$ sed '1,$p
+> /SEQRES/s/^.*$/SEQ/' structure.pdb
+
+# Question 1h
+$ scp -i 43524273.pem jabberwocky.txt ubuntu@ec2-13-210-68-228.ap-southeast-2.compute.amazonaws.com:
+ubuntu@ip-172-31-30-177:~$ sed '/^\s*$/d' jabberwocky.txt
+ubuntu@ip-172-31-30-177:~$ grep -c '^\s*$' jabberwocky.txt
+ubuntu@ip-172-31-30-177:~$ sed '/^\s*$/d' jabberwocky.txt > test1h.txt
+ubuntu@ip-172-31-30-177:~$ grep -c '^\s*$' test1h.txt
+
+# End of the script
+
